@@ -1,0 +1,313 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-hero-section-with-app-name-gigmarket-tagline-hire-trusted-local-workers-easily-two-cta-buttons-download-apk-and-get-started-and-illustration-showing-workers-in-construction-factory-and-school-staff-roles",
+      "featureTitle": "Create hero section with app name 'GigMarket', tagline 'Hire trusted local workers easily', two CTA buttons ('Download APK' and 'Get Started'), and illustration showing workers in construction, factory, and school staff roles",
+      "files": [
+        "frontend/src/components/HeroSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-how-it-works-section-with-4-steps-post-a-job-workers-apply-hire-instantly-track-status",
+      "featureTitle": "Create 'How It Works' section with 4 steps: Post a job, Workers apply, Hire instantly, Track status",
+      "files": [
+        "frontend/src/components/HowItWorksSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-features-section-highlighting-5-key-features-verified-workers-location-based-hiring-quick-hiring-ratings-reviews-multi-category-workers",
+      "featureTitle": "Create Features section highlighting 5 key features: Verified workers, Location based hiring, Quick hiring, Ratings & reviews, Multi-category workers",
+      "files": [
+        "frontend/src/components/FeaturesSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-5-navigation-cards-on-landing-page-linking-to-separate-dashboard-pages-about-application-user-manual-review-centre-complaint-box-download-apk",
+      "featureTitle": "Create 5 navigation cards on landing page linking to separate dashboard pages: About Application, User Manual, Review Centre, Complaint Box, Download APK",
+      "files": [
+        "frontend/src/components/NavigationCards.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-about-application-dashboard-page-with-app-mission-problem-statement-target-users-workers-employers-benefits-screenshots-placeholder-and-founder-project-info-sections",
+      "featureTitle": "Create About Application dashboard page with app mission, problem statement, target users (workers + employers), benefits, screenshots placeholder, and founder/project info sections",
+      "files": [
+        "frontend/src/pages/AboutApplicationPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-user-manual-dashboard-page-with-sections-for-account-creation-job-posting-worker-application-process-hiring-process-safety-tips-and-faq-accordion-using-step-cards-ui",
+      "featureTitle": "Create User Manual dashboard page with sections for account creation, job posting, worker application process, hiring process, safety tips, and FAQ accordion using step cards UI",
+      "files": [
+        "frontend/src/pages/UserManualPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-review-centre-dashboard-page-with-ratings-summary-stars-review-cards-filter-options-worker-employer-write-review-form-and-demo-analytics-chart",
+      "featureTitle": "Create Review Centre dashboard page with ratings summary (stars), review cards, filter options (worker/employer), write review form, and demo analytics chart",
+      "files": [
+        "frontend/src/pages/ReviewCentrePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-complaint-box-dashboard-page-with-complaint-form-category-dropdown-file-upload-for-proof-ticket-status-ui-previous-complaints-list-using-official-and-trust-focused-design",
+      "featureTitle": "Create Complaint Box dashboard page with complaint form, category dropdown, file upload for proof, ticket status UI, previous complaints list, using official and trust-focused design",
+      "files": [
+        "frontend/src/pages/ComplaintBoxPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-download-apk-dashboard-page-with-primary-apk-download-button-version-info-app-screenshots-carousel-installation-steps-and-coming-soon-on-play-store-section",
+      "featureTitle": "Create Download APK dashboard page with primary APK download button, version info, app screenshots carousel, installation steps, and 'Coming soon on Play Store' section",
+      "files": [
+        "frontend/src/pages/DownloadAPKPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-stats-section-on-landing-page-showing-metrics-for-workers-onboarded-and-jobs-posted-with-numerical-highlights",
+      "featureTitle": "Create stats section on landing page showing metrics for workers onboarded and jobs posted with numerical highlights",
+      "files": [
+        "frontend/src/components/StatsSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-trust-badges-section-on-landing-page-to-establish-credibility",
+      "featureTitle": "Create trust badges section on landing page to establish credibility",
+      "files": [
+        "frontend/src/components/TrustBadgesSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-testimonials-section-on-landing-page-with-user-feedback-and-reviews",
+      "featureTitle": "Create testimonials section on landing page with user feedback and reviews",
+      "files": [
+        "frontend/src/components/TestimonialsSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-worker-categories-grid-on-landing-page-with-icons-representing-factory-work-school-staff-construction-labor-helpers-drivers-cleaners-and-technicians",
+      "featureTitle": "Create worker categories grid on landing page with icons representing factory work, school staff, construction labor, helpers, drivers, cleaners, and technicians",
+      "files": [
+        "frontend/src/components/WorkerCategoriesGrid.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-call-to-action-footer-on-landing-page-with-ctas-encouraging-user-engagement",
+      "featureTitle": "Create call to action footer on landing page with CTAs encouraging user engagement",
+      "files": [
+        "frontend/src/components/CTAFooter.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-client-side-routing-to-navigate-between-landing-page-and-5-dashboard-pages-about-application-user-manual-review-centre-complaint-box-download-apk",
+      "featureTitle": "Implement client-side routing to navigate between landing page and 5 dashboard pages (About Application, User Manual, Review Centre, Complaint Box, Download APK)",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/LandingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-modern-startup-ui-design-system-with-soft-shadows-rounded-cards-trust-colors-blue-green-accessible-fonts-for-low-tech-users-mobile-first-responsive-layout-and-cta-focused-design-across-all-pages",
+      "featureTitle": "Apply modern startup UI design system with soft shadows, rounded cards, trust colors (blue + green), accessible fonts for low-tech users, mobile-first responsive layout, and CTA-focused design across all pages",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-populate-all-sections-with-dummy-data-to-make-the-website-demo-ready-with-realistic-content-for-workers-jobs-reviews-complaints-and-statistics",
+      "featureTitle": "Populate all sections with dummy data to make the website demo-ready with realistic content for workers, jobs, reviews, complaints, and statistics",
+      "files": [
+        "frontend/src/data/dummyData.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

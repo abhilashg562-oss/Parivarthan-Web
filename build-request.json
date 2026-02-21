@@ -1,0 +1,385 @@
+{
+  "kind": "build_request",
+  "title": "Create GigMarket landing website with 5 dashboard pages",
+  "projectName": "GigMarket",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create hero section with app name 'GigMarket', tagline 'Hire trusted local workers easily', two CTA buttons ('Download APK' and 'Get Started'), and illustration showing workers in construction, factory, and school staff roles",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "App name: GigMarket",
+          "Tagline: \"Hire trusted local workers easily\"",
+          "Buttons: Download APK, Get Started",
+          "Illustration showing workers (construction, factory, school staff)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero section displays 'GigMarket' as the app name",
+        "Tagline 'Hire trusted local workers easily' is visible",
+        "Two CTA buttons are present: 'Download APK' and 'Get Started'",
+        "Visual element represents workers from construction, factory, and school staff categories"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create 'How It Works' section with 4 steps: Post a job, Workers apply, Hire instantly, Track status",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "How It Works\n- Post a job\n- Workers apply\n- Hire instantly\n- Track status"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Section displays four sequential steps",
+        "Steps are labeled: 'Post a job', 'Workers apply', 'Hire instantly', 'Track status'",
+        "Visual flow shows the process clearly"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Create Features section highlighting 5 key features: Verified workers, Location based hiring, Quick hiring, Ratings & reviews, Multi-category workers",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Features Section\n- Verified workers\n- Location based hiring\n- Quick hiring\n- Ratings & reviews\n- Multi-category workers"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Features section displays all 5 features",
+        "Each feature has a clear label and icon",
+        "Layout is visually balanced and scannable"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create 5 navigation cards on landing page linking to separate dashboard pages: About Application, User Manual, Review Centre, Complaint Box, Download APK",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Options / Navigation Cards (IMPORTANT)\nCreate 5 main cards that open separate dashboards/pages:\n1. About Application\n2. User Manual\n3. Review Centre\n4. Complaint Box\n5. Download APK"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Five clickable cards are displayed on the landing page",
+        "Cards are labeled: 'About Application', 'User Manual', 'Review Centre', 'Complaint Box', 'Download APK'",
+        "Each card navigates to its corresponding dashboard page",
+        "Cards use consistent styling with icons"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create About Application dashboard page with app mission, problem statement, target users (workers + employers), benefits, screenshots placeholder, and founder/project info sections",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "1️⃣ About Application Dashboard\nInclude:\n- App mission\n- Problem statement\n- Target users (workers + employers)\n- Benefits\n- Screenshots placeholder\n- Founder / project info"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Separate page/route exists for About Application",
+        "Page contains sections for mission, problem statement, target users, benefits, screenshots placeholder, and founder info",
+        "Content is organized with clear headings",
+        "Page is accessible via the About Application navigation card"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create User Manual dashboard page with sections for account creation, job posting, worker application process, hiring process, safety tips, and FAQ accordion using step cards UI",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "2️⃣ User Manual Dashboard\nInclude:\n- How to create account\n- How to post job\n- How to apply as worker\n- How to hire\n- Safety tips\n- FAQ accordion\n- Use step cards UI"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Separate page/route exists for User Manual",
+        "Page includes sections for account creation, job posting, worker application, hiring, and safety tips",
+        "FAQ section uses accordion UI pattern",
+        "Step-by-step instructions use card-based layout",
+        "Page is accessible via the User Manual navigation card"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Create Review Centre dashboard page with ratings summary (stars), review cards, filter options (worker/employer), write review form, and demo analytics chart",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "3️⃣ Review Centre Dashboard\nInclude:\n- Ratings summary (stars)\n- Review cards\n- Filter (worker / employer)\n- Write review form\n- Demo analytics chart"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Separate page/route exists for Review Centre",
+        "Page displays ratings summary with star visualization",
+        "Review cards are displayed with dummy data",
+        "Filter controls allow switching between worker and employer views",
+        "Form allows users to write new reviews",
+        "Demo analytics chart visualizes review data",
+        "Page is accessible via the Review Centre navigation card"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Create Complaint Box dashboard page with complaint form, category dropdown, file upload for proof, ticket status UI, previous complaints list, using official and trust-focused design",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "4️⃣ Complaint Box Dashboard\nInclude:\n- Complaint form\n- Category dropdown\n- Upload proof\n- Ticket status UI\n- Previous complaints list\n- Make it look official and trust-focused"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Separate page/route exists for Complaint Box",
+        "Form includes category dropdown and file upload capability",
+        "Ticket status UI shows complaint progress",
+        "Previous complaints are listed with status indicators",
+        "Design conveys trust and official handling",
+        "Page is accessible via the Complaint Box navigation card"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Create Download APK dashboard page with primary APK download button, version info, app screenshots carousel, installation steps, and 'Coming soon on Play Store' section",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "5️⃣ Download APK Dashboard\nInclude:\n- APK download button (primary CTA)\n- Version info\n- App screenshots carousel\n- Installation steps\n- \"Coming soon on Play Store\" section"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Separate page/route exists for Download APK",
+        "Prominent APK download button is displayed as primary CTA",
+        "Version information is shown",
+        "Screenshots carousel displays app screens",
+        "Installation steps are provided in clear sequence",
+        "Section indicates Play Store availability is coming soon",
+        "Page is accessible via the Download APK navigation card"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Create stats section on landing page showing metrics for workers onboarded and jobs posted with numerical highlights",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "⭐ Extra (important for judges/demo)\nAdd:\n- Stats section (workers onboarded, jobs posted)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Stats section is visible on landing page",
+        "Displays worker count metric",
+        "Displays jobs posted metric",
+        "Numbers are prominently featured with labels"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Create trust badges section on landing page to establish credibility",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "- Trust badges"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Trust badges section is visible on landing page",
+        "Displays credibility indicators or trust symbols",
+        "Badges are visually distinct and recognizable"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Create testimonials section on landing page with user feedback and reviews",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "- Testimonials"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Testimonials section is present on landing page",
+        "Displays multiple testimonial cards with dummy data",
+        "Each testimonial includes user type (worker/employer) indication"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Create worker categories grid on landing page with icons representing factory work, school staff, construction labor, helpers, drivers, cleaners, and technicians",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "- Worker categories grid",
+          "jobs like factory work, school staff, construction labor, helpers, drivers, cleaners and technicians"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Grid displays all 7 worker categories: factory work, school staff, construction labor, helpers, drivers, cleaners, technicians",
+        "Each category has a distinct icon",
+        "Grid is responsive and visually organized",
+        "Categories are clearly labeled"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Create call to action footer on landing page with CTAs encouraging user engagement",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "- Call to action footer"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Footer section contains prominent call-to-action elements",
+        "CTAs align with main user goals (download/get started)",
+        "Footer is present on landing page"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Implement client-side routing to navigate between landing page and 5 dashboard pages (About Application, User Manual, Review Centre, Complaint Box, Download APK)",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Each option must open its own dashboard page",
+          "Routing between dashboards"
+        ]
+      },
+      "acceptanceCriteria": [
+        "React Router or similar routing solution is configured",
+        "Landing page is accessible at root route",
+        "Each dashboard has a unique route",
+        "Navigation between pages works without page reload",
+        "Browser back/forward buttons work correctly"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Apply modern startup UI design system with soft shadows, rounded cards, trust colors (blue + green), accessible fonts for low-tech users, mobile-first responsive layout, and CTA-focused design across all pages",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "🎨 UI Style\n- Modern startup UI\n- Soft shadows\n- Rounded cards\n- Mobile first\n- Accessible fonts (important for workers)\n- Icons for each category\n- Trust colors (blue + green)",
+          "The website should look clean, professional, trustworthy and easy for low-tech users"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Design uses soft shadows and rounded corners throughout",
+        "Color scheme incorporates blue and green as primary trust colors",
+        "Typography uses clear, accessible fonts suitable for low-tech users",
+        "Layout is mobile-first and responsive across devices",
+        "CTAs are prominent and easy to identify",
+        "Icons are used consistently for categories and features",
+        "Overall design conveys professionalism and trustworthiness"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Populate all sections with dummy data to make the website demo-ready with realistic content for workers, jobs, reviews, complaints, and statistics",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Dummy data",
+          "Demo ready",
+          "⭐ Extra (important for judges/demo)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All dashboard pages display realistic dummy content",
+        "Review cards show sample reviews",
+        "Complaint box shows example complaints",
+        "Stats show realistic numbers",
+        "Testimonials use believable worker/employer quotes",
+        "Website is fully navigable and presentable for demo purposes"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use React with TypeScript for frontend implementation",
+    "Use Tailwind CSS for styling",
+    "Maintain mobile-first responsive design approach",
+    "Keep component structure clean and reusable"
+  ],
+  "nonGoals": [
+    "Backend integration for storing reviews or complaints",
+    "Actual APK file generation or hosting",
+    "Real authentication system",
+    "Database for user data or job postings",
+    "Payment processing",
+    "SMS or email notifications",
+    "Real-time features or chat functionality",
+    "GPS or location tracking features",
+    "Integration with actual Play Store or app stores"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Hero section illustration showing diverse workers including construction worker, factory worker, and school staff member in a modern flat illustration style with blue and green accent colors (hero-workers.dim_1200x600.png)",
+      "Trust badge icon representing verified or certified status in a professional style (trust-badge-1.dim_128x128.png)",
+      "Trust badge icon representing secure platform in a professional style (trust-badge-2.dim_128x128.png)",
+      "Trust badge icon representing quality service in a professional style (trust-badge-3.dim_128x128.png)",
+      "Category icon for factory work showing industrial/manufacturing theme (category-factory.dim_96x96.png)",
+      "Category icon for school staff showing education theme (category-school.dim_96x96.png)",
+      "Category icon for construction labor showing building/tools theme (category-construction.dim_96x96.png)",
+      "Category icon for helpers showing assistance theme (category-helpers.dim_96x96.png)",
+      "Category icon for drivers showing vehicle/transportation theme (category-drivers.dim_96x96.png)",
+      "Category icon for cleaners showing cleaning supplies theme (category-cleaners.dim_96x96.png)",
+      "Category icon for technicians showing tools/repair theme (category-technicians.dim_96x96.png)",
+      "Screenshot placeholder showing mobile app interface for About Application page (app-screenshot-1.dim_400x800.png)",
+      "Screenshot placeholder showing mobile app job posting interface (app-screenshot-2.dim_400x800.png)",
+      "Screenshot placeholder showing mobile app worker profile interface (app-screenshot-3.dim_400x800.png)"
+    ],
+    "edits": []
+  }
+}

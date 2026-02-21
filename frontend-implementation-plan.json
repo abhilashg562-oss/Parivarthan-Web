@@ -1,0 +1,316 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "GigMarket landing website with 5 dashboard pages",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create hero section with app branding, CTAs, and worker illustration",
+      "acceptanceCriteria": [
+        "Hero section displays 'GigMarket' as the app name",
+        "Tagline 'Hire trusted local workers easily' is visible",
+        "Two CTA buttons are present: 'Download APK' and 'Get Started'",
+        "Visual element represents workers from construction, factory, and school staff categories"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/HeroSection.tsx",
+          "operation": "create",
+          "description": "Create hero section component with GigMarket branding, tagline 'Hire trusted local workers easily', two CTA buttons ('Download APK' and 'Get Started'), and integrate the generated hero illustration image from frontend/public/assets/generated/hero-workers.dim_1200x600.png"
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Create How It Works section with 4-step process flow",
+      "acceptanceCriteria": [
+        "Section displays four sequential steps",
+        "Steps are labeled: 'Post a job', 'Workers apply', 'Hire instantly', 'Track status'",
+        "Visual flow shows the process clearly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/HowItWorksSection.tsx",
+          "operation": "create",
+          "description": "Create How It Works section component displaying 4 sequential steps: Post a job, Workers apply, Hire instantly, Track status. Use card-based layout with icons and visual flow indicators"
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create Features section highlighting 5 key platform capabilities",
+      "acceptanceCriteria": [
+        "Features section displays all 5 features",
+        "Each feature has a clear label and icon",
+        "Layout is visually balanced and scannable"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/FeaturesSection.tsx",
+          "operation": "create",
+          "description": "Create Features section component displaying 5 key features: Verified workers, Location based hiring, Quick hiring, Ratings & reviews, Multi-category workers. Use icon cards in a balanced grid layout"
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create 5 navigation cards linking to separate dashboard pages",
+      "acceptanceCriteria": [
+        "Five clickable cards are displayed on the landing page",
+        "Cards are labeled: 'About Application', 'User Manual', 'Review Centre', 'Complaint Box', 'Download APK'",
+        "Each card navigates to its corresponding dashboard page",
+        "Cards use consistent styling with icons"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/NavigationCards.tsx",
+          "operation": "create",
+          "description": "Create navigation cards component with 5 clickable cards linking to dashboard pages: About Application, User Manual, Review Centre, Complaint Box, Download APK. Use consistent card styling with icons and wire navigation using React Router Link components"
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create About Application dashboard page with mission, benefits, and project info",
+      "acceptanceCriteria": [
+        "Separate page/route exists for About Application",
+        "Page contains sections for mission, problem statement, target users, benefits, screenshots placeholder, and founder info",
+        "Content is organized with clear headings",
+        "Page is accessible via the About Application navigation card"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AboutApplicationPage.tsx",
+          "operation": "create",
+          "description": "Create About Application dashboard page with sections for app mission, problem statement, target users (workers + employers), benefits, and founder/project info. Include screenshot placeholder using frontend/public/assets/generated/app-screenshot-1.dim_400x800.png. Populate with realistic dummy data"
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Create User Manual dashboard page with step-by-step guides and FAQ",
+      "acceptanceCriteria": [
+        "Separate page/route exists for User Manual",
+        "Page includes sections for account creation, job posting, worker application, hiring, and safety tips",
+        "FAQ section uses accordion UI pattern",
+        "Step-by-step instructions use card-based layout",
+        "Page is accessible via the User Manual navigation card"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/UserManualPage.tsx",
+          "operation": "create",
+          "description": "Create User Manual dashboard page with sections for account creation, job posting, worker application process, hiring process, and safety tips using step card UI. Include FAQ accordion section with common questions. Populate with dummy instructional content"
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Create Review Centre dashboard page with ratings, filters, and review form",
+      "acceptanceCriteria": [
+        "Separate page/route exists for Review Centre",
+        "Page displays ratings summary with star visualization",
+        "Review cards are displayed with dummy data",
+        "Filter controls allow switching between worker and employer views",
+        "Form allows users to write new reviews",
+        "Demo analytics chart visualizes review data",
+        "Page is accessible via the Review Centre navigation card"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ReviewCentrePage.tsx",
+          "operation": "create",
+          "description": "Create Review Centre dashboard page with ratings summary (star visualization), review cards with dummy data, filter options (worker/employer), write review form, and demo analytics chart. Use cards for individual reviews and populate with realistic sample reviews"
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Create Complaint Box dashboard page with official complaint handling UI",
+      "acceptanceCriteria": [
+        "Separate page/route exists for Complaint Box",
+        "Form includes category dropdown and file upload capability",
+        "Ticket status UI shows complaint progress",
+        "Previous complaints are listed with status indicators",
+        "Design conveys trust and official handling",
+        "Page is accessible via the Complaint Box navigation card"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ComplaintBoxPage.tsx",
+          "operation": "create",
+          "description": "Create Complaint Box dashboard page with complaint form (category dropdown, file upload for proof), ticket status UI, and previous complaints list with status indicators. Use official and trust-focused design language. Populate with sample complaint data"
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Create Download APK dashboard page with installation guidance and screenshots",
+      "acceptanceCriteria": [
+        "Separate page/route exists for Download APK",
+        "Prominent APK download button is displayed as primary CTA",
+        "Version information is shown",
+        "Screenshots carousel displays app screens",
+        "Installation steps are provided in clear sequence",
+        "Section indicates Play Store availability is coming soon",
+        "Page is accessible via the Download APK navigation card"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/DownloadAPKPage.tsx",
+          "operation": "create",
+          "description": "Create Download APK dashboard page with prominent APK download button as primary CTA, version info, app screenshots carousel using frontend/public/assets/generated/app-screenshot-2.dim_400x800.png and frontend/public/assets/generated/app-screenshot-3.dim_400x800.png, installation steps, and 'Coming soon on Play Store' section"
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Create stats section displaying workers onboarded and jobs posted metrics",
+      "acceptanceCriteria": [
+        "Stats section is visible on landing page",
+        "Displays worker count metric",
+        "Displays jobs posted metric",
+        "Numbers are prominently featured with labels"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/StatsSection.tsx",
+          "operation": "create",
+          "description": "Create stats section component showing metrics for workers onboarded and jobs posted with prominent numerical highlights and labels. Use dummy data for demo purposes"
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Create trust badges section to establish platform credibility",
+      "acceptanceCriteria": [
+        "Trust badges section is visible on landing page",
+        "Displays credibility indicators or trust symbols",
+        "Badges are visually distinct and recognizable"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TrustBadgesSection.tsx",
+          "operation": "create",
+          "description": "Create trust badges section component displaying credibility indicators using generated trust badge images: frontend/public/assets/generated/trust-badge-1.dim_128x128.png, frontend/public/assets/generated/trust-badge-2.dim_128x128.png, and frontend/public/assets/generated/trust-badge-3.dim_128x128.png. Make badges visually distinct and professional"
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Create testimonials section with user feedback cards",
+      "acceptanceCriteria": [
+        "Testimonials section is present on landing page",
+        "Displays multiple testimonial cards with dummy data",
+        "Each testimonial includes user type (worker/employer) indication"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TestimonialsSection.tsx",
+          "operation": "create",
+          "description": "Create testimonials section component with user feedback cards. Display multiple testimonials with dummy data indicating user type (worker/employer). Use card-based layout with quotes and user details"
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Create worker categories grid displaying 7 job categories with icons",
+      "acceptanceCriteria": [
+        "Grid displays all 7 worker categories: factory work, school staff, construction labor, helpers, drivers, cleaners, technicians",
+        "Each category has a distinct icon",
+        "Grid is responsive and visually organized",
+        "Categories are clearly labeled"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/WorkerCategoriesGrid.tsx",
+          "operation": "create",
+          "description": "Create worker categories grid component displaying 7 categories with icons: factory work (frontend/public/assets/generated/category-factory.dim_96x96.png), school staff (frontend/public/assets/generated/category-school.dim_96x96.png), construction labor (frontend/public/assets/generated/category-construction.dim_96x96.png), helpers (frontend/public/assets/generated/category-helpers.dim_96x96.png), drivers (frontend/public/assets/generated/category-drivers.dim_96x96.png), cleaners (frontend/public/assets/generated/category-cleaners.dim_96x96.png), and technicians (frontend/public/assets/generated/category-technicians.dim_96x96.png). Use responsive grid layout with clear labels"
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Create call to action footer with engagement CTAs",
+      "acceptanceCriteria": [
+        "Footer section contains prominent call-to-action elements",
+        "CTAs align with main user goals (download/get started)",
+        "Footer is present on landing page"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CTAFooter.tsx",
+          "operation": "create",
+          "description": "Create call to action footer component with prominent CTAs encouraging user engagement. Align CTAs with main user goals (Download APK, Get Started). Use compelling copy and button styling"
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Implement client-side routing for landing page and 5 dashboard pages",
+      "acceptanceCriteria": [
+        "React Router or similar routing solution is configured",
+        "Landing page is accessible at root route",
+        "Each dashboard has a unique route",
+        "Navigation between pages works without page reload",
+        "Browser back/forward buttons work correctly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Configure React Router with routes for landing page (root), About Application (/about), User Manual (/manual), Review Centre (/reviews), Complaint Box (/complaints), and Download APK (/download). Wire up all page components to their respective routes"
+        },
+        {
+          "path": "frontend/src/pages/LandingPage.tsx",
+          "operation": "create",
+          "description": "Create landing page component that composes all landing page sections: HeroSection, HowItWorksSection, FeaturesSection, NavigationCards, StatsSection, TrustBadgesSection, TestimonialsSection, WorkerCategoriesGrid, and CTAFooter. This serves as the root route"
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Apply modern startup UI design system with trust colors and mobile-first layout",
+      "acceptanceCriteria": [
+        "Design uses soft shadows and rounded corners throughout",
+        "Color scheme incorporates blue and green as primary trust colors",
+        "Typography uses clear, accessible fonts suitable for low-tech users",
+        "Layout is mobile-first and responsive across devices",
+        "CTAs are prominent and easy to identify",
+        "Icons are used consistently for categories and features",
+        "Overall design conveys professionalism and trustworthiness"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define global design system with trust colors (blue and green as CSS custom properties), accessible font families for low-tech users, soft shadow utilities, and rounded corner standards. Set base typography scale and mobile-first responsive breakpoints"
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Configure Tailwind theme with trust colors (blue and green shades), rounded corner utilities, soft shadow scales, accessible font stacks, and mobile-first breakpoints. Extend theme to support modern startup UI aesthetic with professional and trustworthy design tokens"
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Populate all sections with realistic dummy data for demo readiness",
+      "acceptanceCriteria": [
+        "All dashboard pages display realistic dummy content",
+        "Review cards show sample reviews",
+        "Complaint box shows example complaints",
+        "Stats show realistic numbers",
+        "Testimonials use believable worker/employer quotes",
+        "Website is fully navigable and presentable for demo purposes"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/data/dummyData.ts",
+          "operation": "create",
+          "description": "Create centralized dummy data module containing realistic sample data for reviews (with ratings, worker/employer attribution), complaints (with categories and statuses), statistics (worker counts, job counts), testimonials (with worker/employer quotes), user manual FAQ items, and about page content. Make data demo-ready and believable"
+        }
+      ]
+    }
+  ]
+}

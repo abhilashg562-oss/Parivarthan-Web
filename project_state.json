@@ -1,0 +1,254 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "GigMarket: A modern responsive landing website for a local worker hiring platform connecting users with workers across multiple job categories (factory work, school staff, construction, helpers, drivers, cleaners, technicians). Features a professional landing page with hero section, how-it-works flow, features showcase, and 5 separate dashboard pages (About, User Manual, Review Centre, Complaint Box, Download APK). Designed for trust, accessibility, and demo presentation with low-tech user focus.",
+  "architectural_notes": [
+    "Modern startup UI with soft shadows, rounded cards, trust colors (blue + green)",
+    "Mobile-first responsive design with accessible fonts for low-tech workers",
+    "Routing system for 5 separate dashboard pages (About, User Manual, Review Centre, Complaint Box, Download APK)",
+    "Clean component structure with reusable card components",
+    "CTA-focused design with primary actions (Download APK, Get Started)",
+    "Demo-ready with dummy data and placeholder content"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Hero section illustration showing diverse workers including construction worker, factory worker, and school staff member in a modern flat illustration style with blue and green accent colors (hero-workers.dim_1200x600.png)\n- Trust badge icon representing verified or certified status in a professional style (trust-badge-1.dim_128x128.png)\n- Trust badge icon representing secure platform in a professional style (trust-badge-2.dim_128x128.png)\n- Trust badge icon representing quality service in a professional style (trust-badge-3.dim_128x128.png)\n- Category icon for factory work showing industrial/manufacturing theme (category-factory.dim_96x96.png)\n- Category icon for school staff showing education theme (category-school.dim_96x96.png)\n- Category icon for construction labor showing building/tools theme (category-construction.dim_96x96.png)\n- Category icon for helpers showing assistance theme (category-helpers.dim_96x96.png)\n- Category icon for drivers showing vehicle/transportation theme (category-drivers.dim_96x96.png)\n- Category icon for cleaners showing cleaning supplies theme (category-cleaners.dim_96x96.png)\n- Category icon for technicians showing tools/repair theme (category-technicians.dim_96x96.png)\n- Screenshot placeholder showing mobile app interface for About Application page (app-screenshot-1.dim_400x800.png)\n- Screenshot placeholder showing mobile app job posting interface (app-screenshot-2.dim_400x800.png)\n- Screenshot placeholder showing mobile app worker profile interface (app-screenshot-3.dim_400x800.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-hero-section-with-app-name-gigmarket-tagline-hire-trusted-local-workers-easily-two-cta-buttons-download-apk-and-get-started-and-illustration-showing-workers-in-construction-factory-and-school-staff-roles",
+      "title": "Create hero section with app name 'GigMarket', tagline 'Hire trusted local workers easily', two CTA buttons ('Download APK' and 'Get Started'), and illustration showing workers in construction, factory, and school staff roles",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-how-it-works-section-with-4-steps-post-a-job-workers-apply-hire-instantly-track-status",
+      "title": "Create 'How It Works' section with 4 steps: Post a job, Workers apply, Hire instantly, Track status",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-features-section-highlighting-5-key-features-verified-workers-location-based-hiring-quick-hiring-ratings-reviews-multi-category-workers",
+      "title": "Create Features section highlighting 5 key features: Verified workers, Location based hiring, Quick hiring, Ratings & reviews, Multi-category workers",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-5-navigation-cards-on-landing-page-linking-to-separate-dashboard-pages-about-application-user-manual-review-centre-complaint-box-download-apk",
+      "title": "Create 5 navigation cards on landing page linking to separate dashboard pages: About Application, User Manual, Review Centre, Complaint Box, Download APK",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-about-application-dashboard-page-with-app-mission-problem-statement-target-users-workers-employers-benefits-screenshots-placeholder-and-founder-project-info-sections",
+      "title": "Create About Application dashboard page with app mission, problem statement, target users (workers + employers), benefits, screenshots placeholder, and founder/project info sections",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-user-manual-dashboard-page-with-sections-for-account-creation-job-posting-worker-application-process-hiring-process-safety-tips-and-faq-accordion-using-step-cards-ui",
+      "title": "Create User Manual dashboard page with sections for account creation, job posting, worker application process, hiring process, safety tips, and FAQ accordion using step cards UI",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-review-centre-dashboard-page-with-ratings-summary-stars-review-cards-filter-options-worker-employer-write-review-form-and-demo-analytics-chart",
+      "title": "Create Review Centre dashboard page with ratings summary (stars), review cards, filter options (worker/employer), write review form, and demo analytics chart",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-complaint-box-dashboard-page-with-complaint-form-category-dropdown-file-upload-for-proof-ticket-status-ui-previous-complaints-list-using-official-and-trust-focused-design",
+      "title": "Create Complaint Box dashboard page with complaint form, category dropdown, file upload for proof, ticket status UI, previous complaints list, using official and trust-focused design",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-download-apk-dashboard-page-with-primary-apk-download-button-version-info-app-screenshots-carousel-installation-steps-and-coming-soon-on-play-store-section",
+      "title": "Create Download APK dashboard page with primary APK download button, version info, app screenshots carousel, installation steps, and 'Coming soon on Play Store' section",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-stats-section-on-landing-page-showing-metrics-for-workers-onboarded-and-jobs-posted-with-numerical-highlights",
+      "title": "Create stats section on landing page showing metrics for workers onboarded and jobs posted with numerical highlights",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-trust-badges-section-on-landing-page-to-establish-credibility",
+      "title": "Create trust badges section on landing page to establish credibility",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-testimonials-section-on-landing-page-with-user-feedback-and-reviews",
+      "title": "Create testimonials section on landing page with user feedback and reviews",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-worker-categories-grid-on-landing-page-with-icons-representing-factory-work-school-staff-construction-labor-helpers-drivers-cleaners-and-technicians",
+      "title": "Create worker categories grid on landing page with icons representing factory work, school staff, construction labor, helpers, drivers, cleaners, and technicians",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-call-to-action-footer-on-landing-page-with-ctas-encouraging-user-engagement",
+      "title": "Create call to action footer on landing page with CTAs encouraging user engagement",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-client-side-routing-to-navigate-between-landing-page-and-5-dashboard-pages-about-application-user-manual-review-centre-complaint-box-download-apk",
+      "title": "Implement client-side routing to navigate between landing page and 5 dashboard pages (About Application, User Manual, Review Centre, Complaint Box, Download APK)",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-modern-startup-ui-design-system-with-soft-shadows-rounded-cards-trust-colors-blue-green-accessible-fonts-for-low-tech-users-mobile-first-responsive-layout-and-cta-focused-design-across-all-pages",
+      "title": "Apply modern startup UI design system with soft shadows, rounded cards, trust colors (blue + green), accessible fonts for low-tech users, mobile-first responsive layout, and CTA-focused design across all pages",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-populate-all-sections-with-dummy-data-to-make-the-website-demo-ready-with-realistic-content-for-workers-jobs-reviews-complaints-and-statistics",
+      "title": "Populate all sections with dummy data to make the website demo-ready with realistic content for workers, jobs, reviews, complaints, and statistics",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Hero section with app name, tagline, CTA buttons, and worker illustrations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "How It Works section (post job, workers apply, hire instantly, track status)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Features section showcasing verified workers, location-based hiring, quick hiring, ratings, multi-category",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "5 navigation cards linking to separate dashboard pages",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "About Application dashboard with mission, problem statement, target users, benefits, screenshots placeholder",
+      "reqIds": [
+        "AR-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "User Manual dashboard with account creation, job posting, worker application, hiring process, safety tips, FAQ accordion",
+      "reqIds": [
+        "AR-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Review Centre dashboard with ratings summary, review cards, filters, write review form, demo analytics chart",
+      "reqIds": [
+        "AR-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Complaint Box dashboard with form, category dropdown, file upload, ticket status UI, previous complaints list",
+      "reqIds": [
+        "AR-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Download APK dashboard with download button, version info, screenshots carousel, installation steps, Play Store coming soon",
+      "reqIds": [
+        "AR-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Stats section showing workers onboarded and jobs posted",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Trust badges section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Testimonials section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Worker categories grid with icons",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Call to action footer",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "GigMarket Landing Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

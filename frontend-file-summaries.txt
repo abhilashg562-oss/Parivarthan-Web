@@ -1,0 +1,23 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router configuration for landing page and 5 dashboard pages, using Outlet component correctly imported from @tanstack/react-router in the Layout component.",
+  "frontend/src/components/Header.tsx": "Sticky header component with GigMarket branding, responsive navigation menu, and mobile hamburger menu with links to all pages and download CTA.",
+  "frontend/src/components/Footer.tsx": "Footer component with brand info, quick links, support links, contact information, and caffeine.ai attribution with UTM tracking.",
+  "frontend/src/components/HeroSection.tsx": "Hero section with GigMarket branding, tagline \"Hire trusted local workers easily\", two CTA buttons (Download APK, Get Started), and hero illustration with decorative gradient elements.",
+  "frontend/src/components/HowItWorksSection.tsx": "Section displaying 4-step process flow (Post job, Workers apply, Hire instantly, Track status) using numbered cards with icons and descriptions.",
+  "frontend/src/components/FeaturesSection.tsx": "Features showcase section displaying 5 key platform capabilities (Verified workers, Location-based hiring, Quick hiring, Ratings & reviews, Multi-category workers) in a responsive grid.",
+  "frontend/src/components/NavigationCards.tsx": "Five clickable navigation cards linking to dashboard pages (About, User Manual, Review Centre, Complaint Box, Download APK) with icons and gradient backgrounds.",
+  "frontend/src/components/StatsSection.tsx": "Statistics section with gradient background displaying key metrics (15,000+ workers, 25,000+ jobs, 4.8/5 rating, 50+ cities) with icons.",
+  "frontend/src/components/TrustBadgesSection.tsx": "Trust badges section displaying three credibility indicators (Verified Platform, Secure Payments, Quality Service) using generated badge images.",
+  "frontend/src/components/TestimonialsSection.tsx": "Testimonials section with review cards from workers and employers, including ratings, user types, and quotes.",
+  "frontend/src/components/WorkerCategoriesGrid.tsx": "Responsive grid displaying 7 worker categories (Factory, School, Construction, Helpers, Drivers, Cleaners, Technicians) with category icons and descriptions.",
+  "frontend/src/components/CTAFooter.tsx": "Call-to-action footer section with gradient background, compelling copy, and two CTA buttons (Download APK, Learn More).",
+  "frontend/src/pages/LandingPage.tsx": "Landing page component composing all landing sections (Hero, How It Works, Features, Stats, Categories, Navigation Cards, Trust Badges, Testimonials, CTA Footer).",
+  "frontend/src/pages/AboutApplicationPage.tsx": "About Application dashboard page with mission statement, problem statement, target users, benefits, app screenshots, and founder/project information in organized card sections.",
+  "frontend/src/pages/UserManualPage.tsx": "User Manual dashboard page with step-by-step guides for account creation, job posting, worker application, hiring process, safety tips, and FAQ accordion.",
+  "frontend/src/pages/ReviewCentrePage.tsx": "Review Centre dashboard page with ratings summary, star visualization, review cards with filters (worker/employer), write review form, and demo analytics chart using Recharts.",
+  "frontend/src/pages/ComplaintBoxPage.tsx": "Complaint Box dashboard page with official complaint submission form (category dropdown, file upload), ticket status UI, and previous complaints list with status badges.",
+  "frontend/src/pages/DownloadAPKPage.tsx": "Download APK dashboard page with prominent download CTA, version information, app screenshots carousel, installation instructions, system requirements, and \"Coming Soon on Play Store\" section.",
+  "frontend/src/data/dummyData.ts": "Centralized dummy data module containing realistic sample data for FAQs, reviews, complaints, and statistics for demo purposes.",
+  "frontend/src/index.css": "Global styles with OKLCH color system defining trust colors (blue and green), light/dark mode tokens, accessible Inter font family, and base typography styles.",
+  "frontend/tailwind.config.js": "Tailwind configuration with trust color tokens (trust-blue, trust-green), extended border radius utilities, soft shadow scales, Inter font family, and mobile-first responsive design tokens."
+}
