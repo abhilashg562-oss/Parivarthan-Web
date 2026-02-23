@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Star, TrendingUp } from 'lucide-react';
+import { Star, TrendingUp, MessageSquare, ThumbsUp, Award, Sparkles } from 'lucide-react';
 import { reviewsData } from '../data/dummyData';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
@@ -37,11 +37,37 @@ export default function ReviewCentrePage() {
   };
 
   return (
-    <div className="py-12">
-      <div className="container max-w-6xl">
+    <div className="py-12 relative overflow-hidden">
+      {/* Floating background icons */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-20 left-10 opacity-10 animate-float" style={{ animationDelay: '0s' }}>
+          <Star className="w-24 h-24 text-yellow-500" />
+        </div>
+        <div className="absolute top-40 right-20 opacity-10 animate-float" style={{ animationDelay: '0.5s' }}>
+          <ThumbsUp className="w-20 h-20 text-trust-green" />
+        </div>
+        <div className="absolute bottom-40 left-20 opacity-10 animate-float" style={{ animationDelay: '1s' }}>
+          <MessageSquare className="w-16 h-16 text-trust-blue" />
+        </div>
+        <div className="absolute bottom-20 right-10 opacity-10 animate-float" style={{ animationDelay: '1.5s' }}>
+          <Award className="w-20 h-20 text-purple-500" />
+        </div>
+      </div>
+
+      <div className="container max-w-6xl relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Review Centre</h1>
+          <div className="relative inline-block mb-6">
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 rounded-full blur-xl opacity-30 animate-pulse"></div>
+            <div className="relative w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 p-1">
+              <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                <Sparkles className="w-12 h-12 text-orange-500" />
+              </div>
+            </div>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text text-transparent">
+            Review Centre
+          </h1>
           <p className="text-xl text-muted-foreground">
             Read reviews and share your experience with the GigMarket community
           </p>
@@ -49,13 +75,15 @@ export default function ReviewCentrePage() {
 
         {/* Ratings Summary */}
         <div className="grid md:grid-cols-2 gap-6 mb-12">
-          <Card className="border-2">
+          <Card className="border-2 hover:shadow-xl transition-shadow">
             <CardHeader>
               <CardTitle>Overall Rating</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex items-center gap-4 mb-4">
-                <div className="text-5xl font-bold text-trust-blue">{averageRating}</div>
+                <div className="text-5xl font-bold text-gradient-from-yellow-to-orange bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent">
+                  {averageRating}
+                </div>
                 <div>
                   <div className="flex gap-1 mb-1">
                     {Array.from({ length: 5 }).map((_, i) => (
@@ -75,7 +103,7 @@ export default function ReviewCentrePage() {
             </CardContent>
           </Card>
 
-          <Card className="border-2">
+          <Card className="border-2 hover:shadow-xl transition-shadow">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <TrendingUp className="h-5 w-5 text-trust-green" />
@@ -100,7 +128,7 @@ export default function ReviewCentrePage() {
         <div className="mb-6">
           <Label className="mb-2 block">Filter Reviews</Label>
           <Select value={filter} onValueChange={(value: any) => setFilter(value)}>
-            <SelectTrigger className="w-full md:w-64">
+            <SelectTrigger className="w-full md:w-64 hover:shadow-md transition-shadow">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -114,7 +142,7 @@ export default function ReviewCentrePage() {
         {/* Reviews List */}
         <div className="space-y-4 mb-12">
           {filteredReviews.map((review) => (
-            <Card key={review.id} className="border-2">
+            <Card key={review.id} className="border-2 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
               <CardContent className="pt-6">
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex items-center gap-3">
@@ -159,9 +187,12 @@ export default function ReviewCentrePage() {
         </div>
 
         {/* Write Review Form */}
-        <Card className="border-2 bg-gradient-to-br from-trust-blue/5 to-trust-green/5">
+        <Card className="border-2 bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 dark:from-yellow-950/20 dark:via-orange-950/20 dark:to-red-950/20 hover:shadow-xl transition-shadow">
           <CardHeader>
-            <CardTitle>Write a Review</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              <MessageSquare className="h-5 w-5 text-orange-500" />
+              Write a Review
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmitReview} className="space-y-4">
@@ -173,7 +204,7 @@ export default function ReviewCentrePage() {
                       key={i}
                       type="button"
                       onClick={() => setRating(i + 1)}
-                      className="focus:outline-none"
+                      className="focus:outline-none hover:scale-110 transition-transform"
                     >
                       <Star
                         className={`h-8 w-8 cursor-pointer transition-colors ${
@@ -194,10 +225,11 @@ export default function ReviewCentrePage() {
                   onChange={(e) => setReviewText(e.target.value)}
                   rows={4}
                   required
+                  className="hover:shadow-md transition-shadow"
                 />
               </div>
 
-              <Button type="submit" className="bg-trust-blue hover:bg-trust-blue/90">
+              <Button type="submit" className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 transition-all">
                 Submit Review
               </Button>
             </form>

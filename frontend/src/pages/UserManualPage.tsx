@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { UserPlus, FileText, Users, CheckCircle, Shield, HelpCircle } from 'lucide-react';
+import { UserPlus, FileText, Users, CheckCircle, Shield, HelpCircle, BookOpen, Wrench, Phone, CreditCard } from 'lucide-react';
 import { faqData } from '../data/dummyData';
 
 const steps = [
@@ -79,11 +79,37 @@ const safetyTips = [
 
 export default function UserManualPage() {
   return (
-    <div className="py-12">
-      <div className="container max-w-5xl">
+    <div className="py-12 relative overflow-hidden">
+      {/* Floating background icons */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-20 left-10 opacity-10 animate-float" style={{ animationDelay: '0s' }}>
+          <BookOpen className="w-24 h-24 text-trust-blue" />
+        </div>
+        <div className="absolute top-40 right-20 opacity-10 animate-float" style={{ animationDelay: '0.5s' }}>
+          <Wrench className="w-20 h-20 text-trust-green" />
+        </div>
+        <div className="absolute bottom-40 left-20 opacity-10 animate-float" style={{ animationDelay: '1s' }}>
+          <Phone className="w-16 h-16 text-purple-500" />
+        </div>
+        <div className="absolute bottom-20 right-10 opacity-10 animate-float" style={{ animationDelay: '1.5s' }}>
+          <CreditCard className="w-20 h-20 text-orange-500" />
+        </div>
+      </div>
+
+      <div className="container max-w-5xl relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">User Manual</h1>
+          <div className="relative inline-block mb-6">
+            <div className="absolute inset-0 bg-gradient-to-r from-trust-blue to-trust-green rounded-full blur-xl opacity-30 animate-pulse"></div>
+            <div className="relative w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-trust-blue via-trust-green to-purple-500 p-1">
+              <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                <BookOpen className="w-12 h-12 text-trust-blue" />
+              </div>
+            </div>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-trust-blue via-trust-green to-purple-600 bg-clip-text text-transparent">
+            User Manual
+          </h1>
           <p className="text-xl text-muted-foreground">
             Everything you need to know to use GigMarket effectively
           </p>
@@ -94,7 +120,7 @@ export default function UserManualPage() {
           {steps.map((section, index) => {
             const Icon = section.icon;
             return (
-              <Card key={index} className="border-2">
+              <Card key={index} className="border-2 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-xl">
                     <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-trust-blue to-trust-green flex items-center justify-center">
@@ -121,7 +147,7 @@ export default function UserManualPage() {
         </div>
 
         {/* Safety Tips */}
-        <Card className="mb-12 border-2 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20">
+        <Card className="mb-12 border-2 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20 hover:shadow-lg transition-shadow">
           <CardHeader>
             <CardTitle className="flex items-center gap-3 text-xl">
               <Shield className="h-6 w-6 text-orange-600" />
@@ -141,7 +167,7 @@ export default function UserManualPage() {
         </Card>
 
         {/* FAQ Section */}
-        <Card className="border-2">
+        <Card className="border-2 hover:shadow-lg transition-shadow">
           <CardHeader>
             <CardTitle className="flex items-center gap-3 text-2xl">
               <HelpCircle className="h-6 w-6 text-trust-blue" />
