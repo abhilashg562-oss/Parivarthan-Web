@@ -5,13 +5,19 @@ module.exports = {
     theme: {
         container: {
             center: true,
-            padding: '1rem',
+            padding: {
+                DEFAULT: '1rem',
+                sm: '1.5rem',
+                md: '2rem',
+                lg: '3rem',
+                xl: '4rem',
+            },
             screens: {
-                sm: '420px',
+                sm: '640px',
                 md: '768px',
                 lg: '1024px',
                 xl: '1280px',
-                '2xl': '1400px',
+                '2xl': '1440px',
             }
         },
         extend: {
@@ -49,23 +55,14 @@ module.exports = {
                     DEFAULT: 'rgb(var(--card))',
                     foreground: 'rgb(var(--card-foreground))'
                 },
-                // Legacy trust colors (keep for compatibility)
-                'trust-blue': {
-                    DEFAULT: '#00f2ff',
-                    dark: '#00b8c8'
-                },
-                'trust-green': {
-                    DEFAULT: '#39ff14',
-                    dark: '#2acc10'
-                },
-                // Neon Cyberpunk palette
+                'trust-blue': { DEFAULT: '#00f2ff', dark: '#00b8c8' },
+                'trust-green': { DEFAULT: '#39ff14', dark: '#2acc10' },
                 'neon-blue': '#00f2ff',
                 'neon-pink': '#ff00c8',
                 'neon-purple': '#8a2be2',
                 'neon-green': '#39ff14',
                 'cyber-dark': '#0f0f1a',
                 'cyber-darker': '#0b0b15',
-                'cyber-card': 'rgba(255,255,255,0.05)',
             },
             borderRadius: {
                 lg: 'var(--radius)',
@@ -87,10 +84,13 @@ module.exports = {
                 'neon-card': '0 8px 32px rgba(0,242,255,0.1), inset 0 0 80px rgba(0,242,255,0.03)',
             },
             fontFamily: {
-                sans: ['Poppins', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+                sans: ['Poppins', 'Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
                 display: ['Orbitron', 'Poppins', 'system-ui', 'sans-serif'],
                 orbitron: ['Orbitron', 'sans-serif'],
                 poppins: ['Poppins', 'sans-serif'],
+            },
+            maxWidth: {
+                'site': '1440px',
             },
             keyframes: {
                 'accordion-down': {
@@ -125,12 +125,6 @@ module.exports = {
                     from: { transform: 'rotate(0deg)' },
                     to: { transform: 'rotate(360deg)' },
                 },
-                'particle-drift': {
-                    '0%': { transform: 'translateY(100vh) translateX(0)', opacity: '0' },
-                    '10%': { opacity: '1' },
-                    '90%': { opacity: '1' },
-                    '100%': { transform: 'translateY(-100px) translateX(100px)', opacity: '0' },
-                },
                 'text-glow': {
                     '0%, 100%': { textShadow: '0 0 10px rgba(0,242,255,0.5)' },
                     '50%': { textShadow: '0 0 25px rgba(0,242,255,0.9), 0 0 50px rgba(0,242,255,0.5)' },
@@ -145,7 +139,6 @@ module.exports = {
                 'fadeIn': 'fadeIn 0.6s ease-out forwards',
                 'slideUp': 'slideUp 0.4s ease-out forwards',
                 'spin-neon': 'spin-neon 1s linear infinite',
-                'particle-drift': 'particle-drift 8s linear infinite',
                 'text-glow': 'text-glow 2s ease-in-out infinite',
             }
         }

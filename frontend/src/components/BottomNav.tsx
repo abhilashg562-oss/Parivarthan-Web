@@ -14,14 +14,12 @@ export default function BottomNav() {
     const currentPath = routerState.location.pathname;
 
     return (
-        <nav
-            className="fixed bottom-0 left-1/2 -translate-x-1/2 z-50 w-full"
-            style={{ maxWidth: '420px' }}
-        >
+        /* md:hidden — only visible on mobile */
+        <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50">
             <div
-                className="mx-2 mb-3 rounded-2xl"
+                className="mx-3 mb-3 rounded-2xl"
                 style={{
-                    background: 'rgba(11,11,21,0.9)',
+                    background: 'rgba(11,11,21,0.92)',
                     backdropFilter: 'blur(20px)',
                     WebkitBackdropFilter: 'blur(20px)',
                     border: '1px solid rgba(0,242,255,0.2)',
@@ -36,14 +34,7 @@ export default function BottomNav() {
                             <Link key={item.to} to={item.to} className="flex flex-col items-center gap-0.5 group">
                                 <div
                                     className="p-2 rounded-xl transition-all duration-300"
-                                    style={
-                                        isActive
-                                            ? {
-                                                background: 'rgba(0,242,255,0.15)',
-                                                boxShadow: '0 0 15px rgba(0,242,255,0.4)',
-                                            }
-                                            : {}
-                                    }
+                                    style={isActive ? { background: 'rgba(0,242,255,0.15)', boxShadow: '0 0 15px rgba(0,242,255,0.4)' } : {}}
                                 >
                                     <Icon
                                         size={22}
@@ -54,22 +45,17 @@ export default function BottomNav() {
                                         }}
                                     />
                                 </div>
-                                <span
-                                    className="text-[10px] font-medium transition-all duration-300"
+                                <span className="text-[10px] font-medium"
                                     style={{
                                         color: isActive ? '#00f2ff' : 'rgba(220,220,240,0.35)',
                                         textShadow: isActive ? '0 0 8px rgba(0,242,255,0.6)' : 'none',
                                         fontFamily: 'Poppins, sans-serif',
-                                    }}
-                                >
+                                    }}>
                                     {item.label}
                                 </span>
-                                {/* Active dot indicator */}
                                 {isActive && (
-                                    <div
-                                        className="w-1 h-1 rounded-full"
-                                        style={{ background: '#00f2ff', boxShadow: '0 0 6px #00f2ff' }}
-                                    />
+                                    <div className="w-1 h-1 rounded-full"
+                                        style={{ background: '#00f2ff', boxShadow: '0 0 6px #00f2ff' }} />
                                 )}
                             </Link>
                         );

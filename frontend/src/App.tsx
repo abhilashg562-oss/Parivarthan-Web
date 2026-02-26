@@ -14,21 +14,12 @@ import Footer from './components/Footer';
 import BottomNav from './components/BottomNav';
 import NeonParticles from './components/NeonParticles';
 
-// Layout component with cyberpunk theme + particles
+// Fully responsive layout: mobile-first with desktop expansion
 function Layout() {
   return (
-    <div
-      className="min-h-screen flex flex-col relative"
-      style={{ background: '#0f0f1a' }}
-    >
-      {/* Floating particle animation overlay */}
+    <div className="min-h-screen flex flex-col relative" style={{ background: '#0f0f1a' }}>
       <NeonParticles />
-
-      {/* Centered mobile container */}
-      <div
-        className="relative z-10 flex flex-col flex-1 w-full mx-auto"
-        style={{ maxWidth: '420px' }}
-      >
+      <div className="relative z-10 flex flex-col flex-1 w-full">
         <Header />
         <main className="flex-1">
           <Outlet />
@@ -40,91 +31,28 @@ function Layout() {
   );
 }
 
-// Define routes
-const rootRoute = createRootRoute({
-  component: Layout,
-});
+const rootRoute = createRootRoute({ component: Layout });
 
-const indexRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/',
-  component: LandingPage,
-});
-
-const aboutRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/about',
-  component: AboutApplicationPage,
-});
-
-const manualRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/manual',
-  component: UserManualPage,
-});
-
-const reviewsRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/reviews',
-  component: ReviewCentrePage,
-});
-
-const complaintsRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/complaints',
-  component: ComplaintBoxPage,
-});
-
-const downloadRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/download',
-  component: DownloadAPKPage,
-});
-
-// New demo routes
-const loginRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/login',
-  component: LoginPage,
-});
-
-const dashboardRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/dashboard',
-  component: DashboardPage,
-});
-
-const providerRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/provider',
-  component: ProviderProfilePage,
-});
-
-const mapRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/map',
-  component: MapViewPage,
-});
+const indexRoute = createRoute({ getParentRoute: () => rootRoute, path: '/', component: LandingPage });
+const aboutRoute = createRoute({ getParentRoute: () => rootRoute, path: '/about', component: AboutApplicationPage });
+const manualRoute = createRoute({ getParentRoute: () => rootRoute, path: '/manual', component: UserManualPage });
+const reviewsRoute = createRoute({ getParentRoute: () => rootRoute, path: '/reviews', component: ReviewCentrePage });
+const complaintsRoute = createRoute({ getParentRoute: () => rootRoute, path: '/complaints', component: ComplaintBoxPage });
+const downloadRoute = createRoute({ getParentRoute: () => rootRoute, path: '/download', component: DownloadAPKPage });
+const loginRoute = createRoute({ getParentRoute: () => rootRoute, path: '/login', component: LoginPage });
+const dashboardRoute = createRoute({ getParentRoute: () => rootRoute, path: '/dashboard', component: DashboardPage });
+const providerRoute = createRoute({ getParentRoute: () => rootRoute, path: '/provider', component: ProviderProfilePage });
+const mapRoute = createRoute({ getParentRoute: () => rootRoute, path: '/map', component: MapViewPage });
 
 const routeTree = rootRoute.addChildren([
-  indexRoute,
-  aboutRoute,
-  manualRoute,
-  reviewsRoute,
-  complaintsRoute,
-  downloadRoute,
-  loginRoute,
-  dashboardRoute,
-  providerRoute,
-  mapRoute,
+  indexRoute, aboutRoute, manualRoute, reviewsRoute, complaintsRoute,
+  downloadRoute, loginRoute, dashboardRoute, providerRoute, mapRoute,
 ]);
 
 const router = createRouter({ routeTree });
 
 declare module '@tanstack/react-router' {
-  interface Register {
-    router: typeof router;
-  }
+  interface Register { router: typeof router; }
 }
 
 export default function App() {
