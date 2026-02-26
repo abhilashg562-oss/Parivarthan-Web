@@ -1,147 +1,100 @@
 import { useEffect, useState } from 'react';
+import { RiFlashlightFill } from 'react-icons/ri';
 
 const categories = [
-  {
-    name: 'Factory Work',
-    image: '/assets/generated/category-factory.dim_96x96.svg',
-    description: 'Manufacturing & production workers',
-    color: 'from-blue-500 to-indigo-600',
-    workers: '5,000+',
-  },
-  {
-    name: 'School Staff',
-    image: '/assets/generated/category-school.dim_96x96.svg',
-    description: 'Teachers, helpers & support staff',
-    color: 'from-purple-500 to-pink-600',
-    workers: '3,200+',
-  },
-  {
-    name: 'Construction',
-    image: '/assets/generated/category-construction.dim_96x96.svg',
-    description: 'Skilled & unskilled workers',
-    color: 'from-orange-500 to-red-600',
-    workers: '4,800+',
-  },
-  {
-    name: 'Helpers',
-    image: '/assets/generated/category-helpers.dim_96x96.svg',
-    description: 'General helpers & assistants',
-    color: 'from-green-500 to-teal-600',
-    workers: '6,500+',
-  },
-  {
-    name: 'Drivers',
-    image: '/assets/generated/category-drivers.dim_96x96.svg',
-    description: 'Professional drivers',
-    color: 'from-cyan-500 to-blue-600',
-    workers: '4,200+',
-  },
-  {
-    name: 'Cleaners',
-    image: '/assets/generated/category-cleaners.dim_96x96.svg',
-    description: 'Cleaning & housekeeping',
-    color: 'from-pink-500 to-rose-600',
-    workers: '5,100+',
-  },
-  {
-    name: 'Technicians',
-    image: '/assets/generated/category-technicians.dim_96x96.svg',
-    description: 'Skilled technical workers',
-    color: 'from-violet-500 to-indigo-600',
-    workers: '2,900+',
-  },
+  { name: 'Factory Work', emoji: '🏭', workers: '5,000+', color: '#00f2ff' },
+  { name: 'School Staff', emoji: '🏫', workers: '3,200+', color: '#ff00c8' },
+  { name: 'Construction', emoji: '🏗️', workers: '4,800+', color: '#ffd700' },
+  { name: 'Helpers', emoji: '🤝', workers: '6,500+', color: '#39ff14' },
+  { name: 'Drivers', emoji: '🚗', workers: '4,200+', color: '#00f2ff' },
+  { name: 'Cleaners', emoji: '🧹', workers: '5,100+', color: '#ff00c8' },
+  { name: 'Technicians', emoji: '🔧', workers: '2,900+', color: '#8a2be2' },
 ];
 
 export default function WorkerCategoriesGrid() {
   const [isVisible, setIsVisible] = useState(false);
+  const [activeChip, setActiveChip] = useState<number | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
       { threshold: 0.1 }
     );
-
     const section = document.getElementById('categories');
-    if (section) {
-      observer.observe(section);
-    }
-
+    if (section) observer.observe(section);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="categories" className="py-20 bg-gradient-to-b from-muted/30 via-white to-muted/30 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{ 
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(59, 130, 246) 1px, transparent 0)`,
-          backgroundSize: '40px 40px'
-        }} />
-      </div>
-
-      <div className="container relative z-10">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full text-sm font-medium text-blue-600 mb-4">
-            <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-            Browse Categories
+    <section id="categories" className="py-16 relative" style={{ background: '#0f0f1a' }}>
+      <div className="mobile-container mx-auto px-4">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs mb-4"
+            style={{ background: 'rgba(0,242,255,0.08)', border: '1px solid rgba(0,242,255,0.25)', color: '#00f2ff' }}>
+            🔍 BROWSE
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 via-blue-700 to-slate-800 bg-clip-text text-transparent">
-            Find Workers by Category
+          <h2 className="text-2xl font-bold mb-2" style={{ fontFamily: 'Orbitron, sans-serif', color: '#fff' }}>
+            Find By <span className="gradient-text-multi">Category</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Explore our diverse range of worker categories to find the perfect match for your needs
+          <p className="text-xs" style={{ color: 'rgba(220,220,240,0.5)' }}>
+            Tap a category to filter workers
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {categories.map((category, index) => (
-            <div
+        {/* Category chips */}
+        <div className="flex flex-wrap gap-2 justify-center mb-8">
+          {categories.map((cat, index) => (
+            <button
               key={index}
-              className={`group relative p-4 md:p-6 rounded-2xl border-2 border-transparent hover:border-transparent bg-white hover:bg-gradient-to-br hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              onClick={() => setActiveChip(activeChip === index ? null : index)}
+              className={`neon-chip ${activeChip === index ? 'active' : ''}`}
+              style={activeChip === index ? {
+                background: `${cat.color}20`,
+                borderColor: `${cat.color}60`,
+                color: cat.color,
+                boxShadow: `0 0 12px ${cat.color}40`,
+              } : {}}
             >
-              {/* Hover Gradient Background */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
-              
-              <div className="relative flex flex-col items-center text-center space-y-3">
-                {/* Icon with gradient */}
-                <div className="relative">
-                  <div className={`w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                    <img src={category.image} alt={category.name} className="w-10 h-10 md:w-12 md:h-12 object-contain" />
-                  </div>
-                  {/* Worker count badge */}
-                  <div className="absolute -top-1 -right-1 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center shadow-md">
-                    <span className="text-[10px] font-bold text-white">{category.workers.split('+')[0][0]}</span>
-                  </div>
-                </div>
-                
-                <div className="space-y-1">
-                  <h3 className="font-bold text-sm md:text-base group-hover:text-trust-blue transition-colors">
-                    {category.name}
-                  </h3>
-                  <p className="text-xs text-muted-foreground line-clamp-2">{category.description}</p>
-                </div>
-
-                {/* Worker count */}
-                <div className="pt-2">
-                  <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${category.color} text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0`}>
-                    {category.workers} Workers
-                  </span>
-                </div>
-              </div>
-            </div>
+              {cat.emoji} {cat.name}
+            </button>
           ))}
         </div>
 
-        {/* View All Button */}
-        <div className="text-center mt-10">
-          <button className="px-8 py-3 bg-gradient-to-r from-trust-blue to-trust-green text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
-            View All Categories
-          </button>
+        {/* Category cards grid */}
+        <div className="grid grid-cols-2 gap-3">
+          {categories.map((cat, index) => (
+            <div
+              key={index}
+              className={`neon-card p-4 text-center cursor-pointer transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} ${activeChip === index ? 'scale-[1.03]' : ''}`}
+              style={{
+                transitionDelay: `${index * 70}ms`,
+                borderColor: activeChip === index ? `${cat.color}50` : `${cat.color}15`,
+                boxShadow: activeChip === index ? `0 0 25px ${cat.color}30` : '',
+              }}
+              onClick={() => setActiveChip(activeChip === index ? null : index)}
+            >
+              <div className="text-3xl mb-2">{cat.emoji}</div>
+              <div className="font-semibold text-xs mb-1" style={{ color: activeChip === index ? cat.color : '#ffffff', fontFamily: 'Poppins, sans-serif' }}>
+                {cat.name}
+              </div>
+              <div className="text-[10px] font-semibold" style={{
+                color: cat.color,
+                textShadow: `0 0 8px ${cat.color}80`,
+              }}>
+                {cat.workers}
+              </div>
+            </div>
+          ))}
+          {/* View all card */}
+          <div
+            className="neon-card p-4 text-center cursor-pointer flex flex-col items-center justify-center gap-2"
+            style={{ borderColor: 'rgba(138,43,226,0.3)', minHeight: '96px' }}
+          >
+            <RiFlashlightFill size={24} style={{ color: '#8a2be2', filter: 'drop-shadow(0 0 6px rgba(138,43,226,0.6))' }} />
+            <div className="text-xs font-semibold" style={{ color: '#8a2be2', fontFamily: 'Orbitron, sans-serif', fontSize: '0.65rem' }}>
+              VIEW ALL
+            </div>
+          </div>
         </div>
       </div>
     </section>

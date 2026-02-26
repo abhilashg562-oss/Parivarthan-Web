@@ -1,46 +1,10 @@
-import { Shield, CreditCard, Award, CheckCircle, Lock, Verified } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { RiShieldCheckLine, RiBankCardLine, RiStarLine, RiCheckboxCircleLine, RiLockLine } from 'react-icons/ri';
 
 const badges = [
-  {
-    icon: Shield,
-    image: '/assets/generated/trust-badge-1.dim_128x128.svg',
-    title: 'Verified Platform',
-    description: 'All workers are background-checked and verified',
-    color: 'from-green-500 to-emerald-600',
-    stat: '100%',
-  },
-  {
-    icon: CreditCard,
-    image: '/assets/generated/trust-badge-2.dim_128x128.svg',
-    title: 'Secure Payments',
-    description: 'Multiple payment options with 256-bit encryption',
-    color: 'from-blue-500 to-indigo-600',
-    stat: 'Secure',
-  },
-  {
-    icon: Award,
-    image: '/assets/generated/trust-badge-3.dim_128x128.svg',
-    title: 'Quality Service',
-    description: 'Rated 4.9/5 by thousands of satisfied users',
-    color: 'from-purple-500 to-pink-600',
-    stat: '4.9★',
-  },
-];
-
-const features = [
-  {
-    icon: CheckCircle,
-    text: 'Verified Workers',
-  },
-  {
-    icon: Lock,
-    text: 'Secure Transactions',
-  },
-  {
-    icon: Verified,
-    text: 'Trusted Platform',
-  },
+  { icon: RiShieldCheckLine, title: 'Verified Platform', description: 'All workers background-checked', stat: '100%', color: '#39ff14', glow: 'rgba(57,255,20,0.4)' },
+  { icon: RiBankCardLine, title: 'Secure Payments', description: 'Multi-option with encryption', stat: 'SSL', color: '#00f2ff', glow: 'rgba(0,242,255,0.4)' },
+  { icon: RiStarLine, title: 'Quality Service', description: 'Rated 4.9/5 by users', stat: '4.9★', color: '#ffd700', glow: 'rgba(255,215,0,0.4)' },
 ];
 
 export default function TrustBadgesSection() {
@@ -48,101 +12,71 @@ export default function TrustBadgesSection() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
       { threshold: 0.1 }
     );
-
     const section = document.getElementById('trust-badges');
-    if (section) {
-      observer.observe(section);
-    }
-
+    if (section) observer.observe(section);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="trust-badges" className="py-20 bg-gradient-to-b from-white via-blue-50/50 to-white relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-64 h-64 bg-green-200/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-blue-200/20 rounded-full blur-3xl" />
-      </div>
-
-      <div className="container relative z-10">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full text-sm font-medium text-green-600 mb-4">
-            <Shield className="w-4 h-4" />
-            Your Safety First
+    <section id="trust-badges" className="py-16 relative" style={{ background: '#0f0f1a' }}>
+      <div className="mobile-container mx-auto px-4">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs mb-4"
+            style={{ background: 'rgba(57,255,20,0.08)', border: '1px solid rgba(57,255,20,0.25)', color: '#39ff14' }}>
+            🔒 TRUST & SAFETY
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 via-blue-700 to-slate-800 bg-clip-text text-transparent">
-            Why Trust GigMarket
+          <h2 className="text-2xl font-bold mb-2" style={{ fontFamily: 'Orbitron, sans-serif', color: '#fff' }}>
+            Why Trust <span className="gradient-text-multi">GigMarket</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            We prioritize your safety and satisfaction with industry-leading security and verification measures
-          </p>
         </div>
 
-        {/* Main Trust Badges */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="flex flex-col gap-4">
           {badges.map((badge, index) => {
+            const Icon = badge.icon;
             return (
               <div
                 key={index}
-                className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: `${index * 150}ms` }}
+                className={`neon-card p-5 flex items-center gap-4 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${index * 100}ms`, borderColor: `${badge.color}25` }}
               >
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-gray-100 hover:border-gray-200 hover:shadow-2xl transition-all duration-300 text-center group">
-                  {/* Icon with gradient background */}
-                  <div className="relative inline-block mb-6">
-                    <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${badge.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <img 
-                        src={badge.image} 
-                        alt={badge.title} 
-                        className="w-12 h-12 object-contain" 
-                      />
-                    </div>
-                    {/* Stat badge */}
-                    <div className={`absolute -top-2 -right-2 w-10 h-10 rounded-full bg-gradient-to-br ${badge.color} flex items-center justify-center shadow-md`}>
-                      <span className="text-xs font-bold text-white">{badge.stat}</span>
-                    </div>
+                <div className="w-14 h-14 rounded-2xl flex-shrink-0 flex items-center justify-center relative"
+                  style={{ background: `${badge.color}12`, border: `1px solid ${badge.color}40` }}>
+                  <Icon size={26} style={{ color: badge.color, filter: `drop-shadow(0 0 6px ${badge.glow})` }} />
+                  {/* Stat overlay */}
+                  <div className="absolute -top-2 -right-2 px-1.5 py-0.5 rounded-full text-[9px] font-bold"
+                    style={{ background: badge.color, color: '#0f0f1a' }}>
+                    {badge.stat}
                   </div>
-
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-trust-blue transition-colors">
-                    {badge.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {badge.description}
-                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-sm mb-0.5" style={{ color: '#fff' }}>{badge.title}</h3>
+                  <p className="text-xs" style={{ color: 'rgba(220,220,240,0.45)' }}>{badge.description}</p>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Trust Indicators */}
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={index}
-                className={`flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-md border border-gray-100 transition-all duration-500 hover:shadow-lg ${isVisible ? 'opacity-100' : 'opacity-0'}`}
-                style={{ transitionDelay: `${(index + 3) * 100}ms` }}
-              >
-                <Icon className="w-5 h-5 text-trust-green" />
-                <span className="text-sm font-medium text-gray-700">{feature.text}</span>
-              </div>
-            );
-          })}
+        {/* Trust Pills */}
+        <div className="flex flex-wrap justify-center gap-2 mt-8">
+          {[
+            { icon: RiCheckboxCircleLine, text: 'Verified Workers', color: '#39ff14' },
+            { icon: RiLockLine, text: 'Secure Transactions', color: '#00f2ff' },
+            { icon: RiShieldCheckLine, text: 'Trusted Platform', color: '#ff00c8' },
+          ].map(({ icon: Icon, text, color }, i) => (
+            <div key={i} className="flex items-center gap-1.5 px-3 py-2 rounded-full text-xs"
+              style={{ background: `${color}08`, border: `1px solid ${color}25`, color }}>
+              <Icon size={13} />
+              {text}
+            </div>
+          ))}
         </div>
 
-        {/* Security Note */}
-        <div className="mt-10 text-center">
-          <p className="text-sm text-muted-foreground">
+        <div className="text-center mt-6">
+          <p className="text-xs" style={{ color: 'rgba(220,220,240,0.3)' }}>
             🔒 Your data is protected with enterprise-grade security
           </p>
         </div>

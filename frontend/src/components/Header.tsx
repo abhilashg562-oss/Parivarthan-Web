@@ -1,96 +1,110 @@
-import { Link, useNavigate } from '@tanstack/react-router';
-import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
 import { useState } from 'react';
+import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import { RiFlashlightFill } from 'react-icons/ri';
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navigate = useNavigate();
-
-  const handleDownloadClick = () => {
-    navigate({ to: '/download' });
-    setMobileMenuOpen(false);
-  };
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-trust-blue to-trust-green flex items-center justify-center">
-              <span className="text-white font-bold text-lg">G</span>
+    <>
+      <header
+        className="sticky top-0 z-40 w-full"
+        style={{
+          background: 'rgba(11,11,21,0.85)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          borderBottom: '1px solid rgba(0,242,255,0.15)',
+          boxShadow: '0 2px 20px rgba(0,242,255,0.08)',
+        }}
+      >
+        <div className="mobile-container mx-auto">
+          <div className="flex items-center justify-between px-4 h-14">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-2 group">
+              <div
+                className="w-8 h-8 rounded-lg flex items-center justify-center"
+                style={{
+                  background: 'linear-gradient(135deg, #00f2ff, #8a2be2)',
+                  boxShadow: '0 0 15px rgba(0,242,255,0.5)',
+                }}
+              >
+                <RiFlashlightFill size={18} color="#0f0f1a" />
+              </div>
+              <span
+                className="font-bold text-sm tracking-widest uppercase"
+                style={{
+                  fontFamily: 'Orbitron, sans-serif',
+                  background: 'linear-gradient(135deg, #00f2ff, #ff00c8)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                Parivarthan
+              </span>
+            </Link>
+
+            {/* Right actions */}
+            <div className="flex items-center gap-3">
+              <Link
+                to="/login"
+                className="neon-btn text-xs px-4 py-1.5 hidden sm:block"
+                style={{ fontSize: '0.72rem' }}
+              >
+                Login
+              </Link>
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="p-1.5 rounded-lg transition-all duration-300"
+                style={{
+                  color: menuOpen ? '#00f2ff' : 'rgba(220,220,240,0.6)',
+                  filter: menuOpen ? 'drop-shadow(0 0 6px #00f2ff)' : 'none',
+                }}
+                aria-label="Toggle menu"
+              >
+                {menuOpen ? <HiX size={22} /> : <HiMenuAlt3 size={22} />}
+              </button>
             </div>
-            <span className="text-xl font-bold text-foreground">GigMarket</span>
           </div>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            Home
-          </Link>
-          <Link to="/about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            About
-          </Link>
-          <Link to="/manual" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            User Manual
-          </Link>
-          <Link to="/reviews" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-            Reviews
-          </Link>
-          <Button onClick={handleDownloadClick} className="bg-trust-blue hover:bg-trust-blue/90">
-            Download APK
-          </Button>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border/40 bg-background">
-          <nav className="container py-4 flex flex-col gap-4">
-            <Link
-              to="/"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              to="/manual"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              User Manual
-            </Link>
-            <Link
-              to="/reviews"
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Reviews
-            </Link>
-            <Button onClick={handleDownloadClick} className="bg-trust-blue hover:bg-trust-blue/90 w-full">
-              Download APK
-            </Button>
-          </nav>
         </div>
-      )}
-    </header>
+
+        {/* Mobile dropdown menu */}
+        {menuOpen && (
+          <div
+            className="mobile-container mx-auto border-t"
+            style={{ borderColor: 'rgba(0,242,255,0.1)' }}
+          >
+            <nav className="px-4 py-4 flex flex-col gap-3">
+              {[
+                { label: '🏠 Home', to: '/' },
+                { label: '📖 About', to: '/about' },
+                { label: '📋 Manual', to: '/manual' },
+                { label: '⭐ Reviews', to: '/reviews' },
+                { label: '📣 Complaints', to: '/complaints' },
+                { label: '📱 Download', to: '/download' },
+              ].map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className="text-sm font-medium py-1.5 transition-all duration-200"
+                  style={{ color: 'rgba(220,220,240,0.7)', fontFamily: 'Poppins, sans-serif' }}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <Link
+                to="/login"
+                className="neon-btn text-xs text-center mt-2"
+                onClick={() => setMenuOpen(false)}
+              >
+                Login / Sign Up
+              </Link>
+            </nav>
+          </div>
+        )}
+      </header>
+    </>
   );
 }

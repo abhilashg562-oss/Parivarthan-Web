@@ -1,186 +1,136 @@
 import { Link } from '@tanstack/react-router';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Clock } from 'lucide-react';
+import { RiInstagramLine, RiFacebookCircleLine, RiTwitterLine, RiLinkedinLine, RiMapPinLine, RiMailLine, RiTimeLine, RiFlashlightFill } from 'react-icons/ri';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border/40 bg-slate-900 text-white">
-      <div className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand & About */}
-          <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-blue-500 to-green-500 flex items-center justify-center">
-                <span className="text-white font-bold text-xl">G</span>
-              </div>
-              <span className="text-xl font-bold">GigMarket</span>
+    <footer style={{ background: '#0b0b15', borderTop: '1px solid rgba(0,242,255,0.1)' }} className="pb-nav">
+      <div className="mobile-container mx-auto px-4 py-10">
+        {/* Logo & About */}
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center"
+              style={{ background: 'linear-gradient(135deg, #00f2ff, #8a2be2)', boxShadow: '0 0 15px rgba(0,242,255,0.4)' }}>
+              <RiFlashlightFill size={16} color="#0f0f1a" />
             </div>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Connecting employers with trusted local workers. We bridge the gap between talent and opportunity, making hiring simple and reliable.
-            </p>
-            <div className="flex gap-4 pt-2">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-slate-800 rounded-full hover:bg-blue-600 transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-slate-800 rounded-full hover:bg-sky-500 transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-slate-800 rounded-full hover:bg-pink-600 transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-slate-800 rounded-full hover:bg-blue-700 transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </div>
+            <span className="font-bold tracking-widest text-sm" style={{
+              fontFamily: 'Orbitron, sans-serif',
+              background: 'linear-gradient(135deg, #00f2ff, #ff00c8)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}>
+              GIGMARKET
+            </span>
           </div>
+          <p className="text-xs leading-relaxed" style={{ color: 'rgba(220,220,240,0.45)', fontFamily: 'Poppins, sans-serif' }}>
+            Connecting employers with trusted local workers. Fast, reliable, and secure.
+          </p>
+          {/* Social Icons */}
+          <div className="flex justify-center gap-3 mt-4">
+            {[
+              { icon: RiFacebookCircleLine, color: '#00f2ff' },
+              { icon: RiTwitterLine, color: '#00f2ff' },
+              { icon: RiInstagramLine, color: '#ff00c8' },
+              { icon: RiLinkedinLine, color: '#8a2be2' },
+            ].map(({ icon: Icon, color }, i) => (
+              <a key={i} href="#"
+                className="w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300"
+                style={{
+                  background: `${color}0f`,
+                  border: `1px solid ${color}30`,
+                }}
+                onClick={e => e.preventDefault()}
+              >
+                <Icon size={17} style={{ color }} />
+              </a>
+            ))}
+          </div>
+        </div>
 
-          {/* Quick Links */}
+        {/* Divider */}
+        <hr className="neon-divider" />
+
+        {/* Links grid */}
+        <div className="grid grid-cols-2 gap-6 mb-8">
           <div>
-            <h3 className="font-semibold mb-4 text-lg">Quick Links</h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link to="/about" className="text-slate-400 hover:text-white transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/manual" className="text-slate-400 hover:text-white transition-colors">
-                  User Manual
-                </Link>
-              </li>
-              <li>
-                <Link to="/reviews" className="text-slate-400 hover:text-white transition-colors">
-                  Reviews & Ratings
-                </Link>
-              </li>
-              <li>
-                <Link to="/download" className="text-slate-400 hover:text-white transition-colors">
-                  Mobile App
-                </Link>
-              </li>
-              <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
-                  Our Services
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
-                  Pricing Plans
-                </a>
-              </li>
+            <h3 className="text-xs font-semibold mb-3 tracking-widest" style={{ fontFamily: 'Orbitron, sans-serif', color: '#00f2ff' }}>
+              QUICK LINKS
+            </h3>
+            <ul className="space-y-2">
+              {[
+                { label: 'About Us', to: '/about' },
+                { label: 'User Manual', to: '/manual' },
+                { label: 'Reviews', to: '/reviews' },
+                { label: 'Download', to: '/download' },
+              ].map((item) => (
+                <li key={item.to}>
+                  <Link to={item.to} className="text-xs transition-colors duration-200"
+                    style={{ color: 'rgba(220,220,240,0.4)', fontFamily: 'Poppins, sans-serif' }}
+                    onMouseOver={e => (e.currentTarget.style.color = '#00f2ff')}
+                    onMouseOut={e => (e.currentTarget.style.color = 'rgba(220,220,240,0.4)')}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-
-          {/* Support */}
           <div>
-            <h3 className="font-semibold mb-4 text-lg">Support</h3>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <Link to="/complaints" className="text-slate-400 hover:text-white transition-colors">
-                  Complaint Box
-                </Link>
-              </li>
-              <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
-                  Help Center
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
-                  FAQ
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
-                  Report an Issue
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-slate-400 hover:text-white transition-colors">
-                  Community
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h3 className="font-semibold mb-4 text-lg">Get in Touch</h3>
-            <ul className="space-y-4 text-sm">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-green-500 mt-0.5" />
-                <span className="text-slate-400">
-                  123 Business Park, Suite 456<br />
-                  New York, NY 10001<br />
-                  United States
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-green-500" />
-                <a href="mailto:support@gigmarket.com" className="text-slate-400 hover:text-white transition-colors">
-                  support@gigmarket.com
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Clock className="h-5 w-5 text-green-500" />
-                <span className="text-slate-400">
-                  Mon - Fri: 9:00 AM - 6:00 PM<br />
-                  Sat: 10:00 AM - 2:00 PM
-                </span>
-              </li>
+            <h3 className="text-xs font-semibold mb-3 tracking-widest" style={{ fontFamily: 'Orbitron, sans-serif', color: '#ff00c8' }}>
+              SUPPORT
+            </h3>
+            <ul className="space-y-2">
+              {[
+                { label: 'Complaint Box', to: '/complaints' },
+                { label: 'Help Center', to: '#' },
+                { label: 'FAQ', to: '#' },
+                { label: 'Contact Us', to: '#' },
+              ].map((item, i) => (
+                <li key={i}>
+                  <Link to={item.to} className="text-xs transition-colors duration-200"
+                    style={{ color: 'rgba(220,220,240,0.4)', fontFamily: 'Poppins, sans-serif' }}
+                    onMouseOver={e => (e.currentTarget.style.color = '#ff00c8')}
+                    onMouseOut={e => (e.currentTarget.style.color = 'rgba(220,220,240,0.4)')}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        {/* App Download Section */}
-        <div className="mt-12 pt-8 border-t border-slate-700">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="text-xl font-bold mb-2">Download Our App</h3>
-              <p className="text-slate-400 text-sm">Get the GigMarket app and hire workers on the go</p>
+        {/* Contact */}
+        <div className="neon-card p-4 mb-6 space-y-2">
+          <h3 className="text-xs font-semibold tracking-widest mb-3" style={{ fontFamily: 'Orbitron, sans-serif', color: '#39ff14' }}>
+            GET IN TOUCH
+          </h3>
+          {[
+            { icon: RiMapPinLine, text: 'Chennai, Tamil Nadu, India', color: '#00f2ff' },
+            { icon: RiMailLine, text: 'support@gigmarket.com', color: '#ff00c8' },
+            { icon: RiTimeLine, text: 'Mon–Fri: 9AM–6PM', color: '#39ff14' },
+          ].map(({ icon: Icon, text, color }, i) => (
+            <div key={i} className="flex items-center gap-2">
+              <Icon size={14} style={{ color, flexShrink: 0 }} />
+              <span className="text-xs" style={{ color: 'rgba(220,220,240,0.5)' }}>{text}</span>
             </div>
-            <div className="flex gap-4">
-              <button className="flex items-center gap-2 bg-black hover:bg-slate-800 px-4 py-2 rounded-lg transition-colors">
-                <div className="text-xs text-left">
-                  <div className="text-slate-400">Download on the</div>
-                  <div className="font-semibold">App Store</div>
-                </div>
-              </button>
-              <button className="flex items-center gap-2 bg-black hover:bg-slate-800 px-4 py-2 rounded-lg transition-colors">
-                <div className="text-xs text-left">
-                  <div className="text-slate-400">Get it on</div>
-                  <div className="font-semibold">Google Play</div>
-                </div>
-              </button>
-            </div>
-          </div>
+          ))}
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-slate-700 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-400 text-sm">
+        {/* Bottom */}
+        <div className="text-center">
+          <div className="flex justify-center flex-wrap gap-4 mb-3">
+            {['Privacy Policy', 'Terms', 'Sitemap'].map((item) => (
+              <a key={item} href="#" className="text-[10px] transition-colors"
+                style={{ color: 'rgba(220,220,240,0.3)' }}
+                onClick={e => e.preventDefault()}>
+                {item}
+              </a>
+            ))}
+          </div>
+          <p className="text-[10px]" style={{ color: 'rgba(220,220,240,0.25)' }}>
             © {currentYear} GigMarket. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm">
-            <a href="#" className="text-slate-400 hover:text-white transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-slate-400 hover:text-white transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="text-slate-400 hover:text-white transition-colors">
-              Cookie Policy
-            </a>
-            <a href="#" className="text-slate-400 hover:text-white transition-colors">
-              Sitemap
-            </a>
-          </div>
         </div>
       </div>
     </footer>

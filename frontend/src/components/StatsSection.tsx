@@ -1,35 +1,11 @@
-import { Users, Briefcase, Star, MapPin, TrendingUp, Award } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { RiGroupLine, RiBriefcaseLine, RiStarLine, RiMapPinLine, RiTrophyLine } from 'react-icons/ri';
 
 const stats = [
-  {
-    icon: Users,
-    value: '50,000+',
-    label: 'Active Workers',
-    color: 'from-blue-400 to-blue-600',
-    description: 'Verified & ready to work',
-  },
-  {
-    icon: Briefcase,
-    value: '100,000+',
-    label: 'Jobs Completed',
-    color: 'from-green-400 to-green-600',
-    description: 'Successful placements',
-  },
-  {
-    icon: Star,
-    value: '4.9/5',
-    label: 'Average Rating',
-    color: 'from-yellow-400 to-orange-500',
-    description: 'Based on reviews',
-  },
-  {
-    icon: MapPin,
-    value: '500+',
-    label: 'Cities Covered',
-    color: 'from-purple-400 to-purple-600',
-    description: 'Pan India coverage',
-  },
+  { icon: RiGroupLine, value: '50,000+', label: 'Active Workers', desc: 'Verified & ready', color: '#00f2ff', glow: 'rgba(0,242,255,0.5)' },
+  { icon: RiBriefcaseLine, value: '100K+', label: 'Jobs Done', desc: 'Successful hires', color: '#39ff14', glow: 'rgba(57,255,20,0.5)' },
+  { icon: RiStarLine, value: '4.9/5', label: 'Avg Rating', desc: 'Based on reviews', color: '#ffd700', glow: 'rgba(255,215,0,0.5)' },
+  { icon: RiMapPinLine, value: '500+', label: 'Cities', desc: 'Pan India', color: '#ff00c8', glow: 'rgba(255,0,200,0.5)' },
 ];
 
 export default function StatsSection() {
@@ -37,89 +13,71 @@ export default function StatsSection() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
       { threshold: 0.3 }
     );
-
     const section = document.getElementById('stats');
-    if (section) {
-      observer.observe(section);
-    }
-
+    if (section) observer.observe(section);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="stats" className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0" style={{ 
-          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-          backgroundSize: '30px 30px'
-        }} />
+    <section id="stats" className="py-16 relative overflow-hidden" style={{ background: '#0b0b15' }}>
+      {/* Diagonal neon glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-px" style={{ background: 'linear-gradient(90deg, transparent, #8a2be2, transparent)' }} />
+        <div className="absolute bottom-0 left-0 w-full h-px" style={{ background: 'linear-gradient(90deg, transparent, #00f2ff, transparent)' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full blur-3xl"
+          style={{ background: 'radial-gradient(circle, rgba(138,43,226,0.08) 0%, transparent 70%)' }} />
       </div>
 
-      {/* Gradient Orbs */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-green-500/20 rounded-full blur-3xl" />
-
-      <div className="container relative z-10">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-sm font-medium text-white mb-4">
-            <TrendingUp className="w-4 h-4" />
-            Our Impact
+      <div className="mobile-container mx-auto px-4">
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs mb-4"
+            style={{ background: 'rgba(138,43,226,0.08)', border: '1px solid rgba(138,43,226,0.3)', color: '#c084fc' }}>
+            📊 IMPACT
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            Trusted by Thousands
+          <h2 className="text-2xl font-bold" style={{ fontFamily: 'Orbitron, sans-serif', color: '#fff' }}>
+            Trusted by <span className="gradient-text-multi">Thousands</span>
           </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Join the fastest growing hiring platform with proven results and satisfied users across the nation
-          </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 gap-4">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
               <div
                 key={index}
-                className={`relative group transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                style={{ transitionDelay: `${index * 100}ms` }}
+                className={`neon-card p-5 text-center transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+                style={{ transitionDelay: `${index * 80}ms`, borderColor: `${stat.color}25` }}
               >
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 h-full">
-                  {/* Icon */}
-                  <div className="flex justify-center mb-4">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="h-8 w-8 text-white" />
-                    </div>
+                <div className="flex justify-center mb-3">
+                  <div className="w-12 h-12 rounded-2xl flex items-center justify-center"
+                    style={{ background: `${stat.color}15`, border: `1px solid ${stat.color}40` }}>
+                    <Icon size={22} style={{ color: stat.color, filter: `drop-shadow(0 0 6px ${stat.glow})` }} />
                   </div>
-
-                  {/* Value */}
-                  <div className="text-center">
-                    <div className="text-3xl md:text-4xl font-bold mb-1 bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
-                      {stat.value}
-                    </div>
-                    <div className="font-semibold text-white mb-1">{stat.label}</div>
-                    <div className="text-xs text-slate-400">{stat.description}</div>
-                  </div>
-
-                  {/* Hover Glow Effect */}
-                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none`} />
                 </div>
+                <div className="text-2xl font-black mb-0.5" style={{
+                  fontFamily: 'Orbitron, sans-serif',
+                  color: stat.color,
+                  textShadow: `0 0 15px ${stat.glow}`,
+                }}>
+                  {stat.value}
+                </div>
+                <div className="text-xs font-semibold mb-0.5" style={{ color: 'rgba(220,220,240,0.9)' }}>{stat.label}</div>
+                <div className="text-[10px]" style={{ color: 'rgba(220,220,240,0.4)' }}>{stat.desc}</div>
               </div>
             );
           })}
         </div>
 
-        {/* Achievement Badge */}
-        <div className="mt-12 flex justify-center">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
-            <Award className="w-6 h-6 text-yellow-400" />
-            <span className="text-sm font-medium">Award Winning Platform 2024</span>
+        <div className="mt-8 flex justify-center">
+          <div className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl"
+            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,215,0,0.3)' }}>
+            <RiTrophyLine size={20} style={{ color: '#ffd700', filter: 'drop-shadow(0 0 6px rgba(255,215,0,0.6))' }} />
+            <span className="text-xs font-medium" style={{ color: 'rgba(220,220,240,0.7)', fontFamily: 'Poppins, sans-serif' }}>
+              Award Winning Platform 2024
+            </span>
           </div>
         </div>
       </div>
