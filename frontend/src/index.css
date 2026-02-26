@@ -150,6 +150,13 @@
     }
   }
 
+  /* Desktop: expand container to full width */
+  @media (min-width: 1024px) {
+    .mobile-container {
+      max-width: 100%;
+    }
+  }
+
   /* Glassmorphism Cards */
   .neon-card {
     background: rgba(255, 255, 255, 0.04);
