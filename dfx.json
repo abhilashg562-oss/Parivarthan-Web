@@ -1,0 +1,9 @@
+{
+  "canisters": {
+    "backend": {
+      "main": "backend/main.mo",
+      "type": "motoko"
+    }
+  },
+  "version": 2
+}
