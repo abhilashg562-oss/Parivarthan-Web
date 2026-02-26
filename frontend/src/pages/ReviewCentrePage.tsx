@@ -117,7 +117,7 @@ export default function ReviewCentrePage() {
                   <XAxis dataKey="stars" />
                   <YAxis />
                   <Tooltip />
-                  <Bar dataKey="count" fill="oklch(var(--trust-blue))" />
+<Bar dataKey="count" fill="#f59e0b" />
                 </BarChart>
               </ResponsiveContainer>
             </CardContent>

@@ -93,7 +93,7 @@ export default function Footer() {
             </h3>
             <div className="space-y-3">
               {[
-                { icon: RiMapPinLine, text: 'Chennai, Tamil Nadu, India', color: '#00f2ff' },
+                { icon: RiMapPinLine, text: 'Mysuru, Karnataka, India', color: '#00f2ff' },
                 { icon: RiMailLine, text: 'support@gigmarket.com', color: '#ff00c8' },
                 { icon: RiTimeLine, text: 'Mon–Fri: 9AM–6PM IST', color: '#39ff14' },
               ].map(({ icon: Icon, text, color }, i) => (

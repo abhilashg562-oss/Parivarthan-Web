@@ -74,24 +74,54 @@ export default function ComplaintBoxPage() {
         </div>
 
         {/* Submit Complaint Form */}
-        <Card className="mb-12 border-2 bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20">
+        <Card 
+          className="mb-12 border-2 shadow-lg"
+          style={{
+            background: 'linear-gradient(135deg, rgba(15,15,35,0.95) 0%, rgba(25,25,50,0.95) 100%)',
+            borderColor: 'rgba(0,242,255,0.3)',
+            boxShadow: '0 0 30px rgba(0,242,255,0.15), inset 0 0 60px rgba(0,242,255,0.03)',
+          }}
+        >
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <AlertCircle className="h-6 w-6 text-orange-600" />
+            <CardTitle 
+              className="flex items-center gap-2 text-xl"
+              style={{
+                color: '#00f2ff',
+                textShadow: '0 0 10px rgba(0,242,255,0.5)',
+              }}
+            >
+              <AlertCircle className="h-6 w-6" style={{ color: '#ff00c8', filter: 'drop-shadow(0 0 6px #ff00c8)' }} />
               Submit a Complaint
             </CardTitle>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <Label htmlFor="category">Category *</Label>
+                <Label 
+                  htmlFor="category" 
+                  style={{ color: 'rgba(220,220,240,0.9)' }}
+                >
+                  Category *
+                </Label>
                 <Select value={category} onValueChange={setCategory} required>
-                  <SelectTrigger id="category">
+                  <SelectTrigger 
+                    id="category"
+                    style={{
+                      background: 'rgba(20,20,40,0.8)',
+                      borderColor: 'rgba(0,242,255,0.3)',
+                      color: '#dcdcf0',
+                    }}
+                  >
                     <SelectValue placeholder="Select a category" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent style={{ background: 'rgba(15,15,35,0.98)', borderColor: 'rgba(0,242,255,0.3)' }}>
                     {categories.map((cat) => (
-                      <SelectItem key={cat} value={cat}>
+                      <SelectItem 
+                        key={cat} 
+                        value={cat}
+                        style={{ color: '#dcdcf0' }}
+                        className="hover:bg-cyan-500/20"
+                      >
                         {cat}
                       </SelectItem>
                     ))}
@@ -100,18 +130,34 @@ export default function ComplaintBoxPage() {
               </div>
 
               <div>
-                <Label htmlFor="subject">Subject *</Label>
+                <Label 
+                  htmlFor="subject" 
+                  style={{ color: 'rgba(220,220,240,0.9)' }}
+                >
+                  Subject *
+                </Label>
                 <Input
                   id="subject"
                   placeholder="Brief description of the issue"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
                   required
+                  style={{
+                    background: 'rgba(20,20,40,0.8)',
+                    borderColor: 'rgba(0,242,255,0.3)',
+                    color: '#dcdcf0',
+                  }}
+                  className="placeholder:text-gray-500"
                 />
               </div>
 
               <div>
-                <Label htmlFor="description">Detailed Description *</Label>
+                <Label 
+                  htmlFor="description" 
+                  style={{ color: 'rgba(220,220,240,0.9)' }}
+                >
+                  Detailed Description *
+                </Label>
                 <Textarea
                   id="description"
                   placeholder="Please provide as much detail as possible..."
@@ -119,23 +165,52 @@ export default function ComplaintBoxPage() {
                   onChange={(e) => setDescription(e.target.value)}
                   rows={5}
                   required
+                  style={{
+                    background: 'rgba(20,20,40,0.8)',
+                    borderColor: 'rgba(0,242,255,0.3)',
+                    color: '#dcdcf0',
+                  }}
+                  className="placeholder:text-gray-500"
                 />
               </div>
 
               <div>
-                <Label htmlFor="proof">Upload Proof (Optional)</Label>
+                <Label 
+                  htmlFor="proof" 
+                  style={{ color: 'rgba(220,220,240,0.9)' }}
+                >
+                  Upload Proof (Optional)
+                </Label>
                 <div className="mt-2 flex items-center gap-2">
-                  <Button type="button" variant="outline" className="w-full">
+                  <Button 
+                    type="button" 
+                    variant="outline" 
+                    className="w-full"
+                    style={{
+                      background: 'rgba(20,20,40,0.8)',
+                      borderColor: 'rgba(0,242,255,0.3)',
+                      color: '#00f2ff',
+                    }}
+                  >
                     <Upload className="mr-2 h-4 w-4" />
                     Choose File
                   </Button>
                 </div>
-                <p className="text-xs text-muted-foreground mt-1">
+                <p className="text-xs mt-1" style={{ color: 'rgba(220,220,240,0.5)' }}>
                   Supported formats: JPG, PNG, PDF (Max 5MB)
                 </p>
               </div>
 
-              <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700">
+              <Button 
+                type="submit" 
+                className="w-full"
+                style={{
+                  background: 'linear-gradient(135deg, #00f2ff 0%, #8a2be2 100%)',
+                  color: '#0f0f1a',
+                  fontWeight: '600',
+                  boxShadow: '0 0 20px rgba(0,242,255,0.4)',
+                }}
+              >
                 Submit Complaint
               </Button>
             </form>

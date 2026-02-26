@@ -50,7 +50,7 @@ export default function Header() {
                 backgroundClip: 'text',
               }}
             >
-              Parivarthan
+              Gigmarket
             </span>
           </Link>
 
